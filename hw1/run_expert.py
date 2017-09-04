@@ -15,6 +15,7 @@ import numpy as np
 import tf_util
 import gym
 import load_policy
+import roboschool
 
 def main():
     import argparse
@@ -35,7 +36,7 @@ def main():
         tf_util.initialize()
 
         import gym
-        env = gym.make(args.envname)
+        env = gym.make('Roboschool' + args.envname)
         max_steps = args.max_timesteps or env.spec.timestep_limit
 
         returns = []
